@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hello Hitoko.</title>
+	<script type="text/javascript" src="js/main.js"></script>
+</head>
+<body>
+	<div>
+		<center>
+			<h2>Hello Hitokoto.</h2>
+			<h3>Welcome to Hitokoto API Project Page.</h3>
+			<h1 id="viewer"></h1>
+		</center>
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
+	<script type="text/javascript">
+		var text = getHitokoto();
+		alert(text);
+	</script>
+</body>
+</html>

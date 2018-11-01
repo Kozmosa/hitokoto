@@ -3,8 +3,11 @@
 <head>
   <meta charset="utf-8">
   <title></title>
+  <script type="text/javascript" src="js/main.js"></script>
 </head>
 <body>
+  <p id="viewer"></p>
+
   <script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
   <script>
@@ -13,8 +16,8 @@
       return res.json();
     })
     .then(function (data) {
-      var hitokoto = document.getElementById('hitokoto');
-      hitokoto.innerText = data.hitokoto;
+      var hitokoto = document.getElementById('viewer');
+      viewer.innerText = data.hitokoto;
     })
     .catch(function (err) {
       console.error(err);
