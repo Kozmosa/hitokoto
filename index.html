@@ -1,22 +1,75 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>Hello Hitoko.</title>
 	<script type="text/javascript" src="js/main.js"></script>
+	<style>
+		.button-blue {
+			width: 200px;
+			padding: 8px;
+			background-color: #428bca;
+			border-color: #357ebd;
+			color: #fff;
+			text-align: center;
+			vertical-align: middle;
+			border: 1px solid transparent;
+			font-size: 125%
+		}
+	</style>
+	<style type="text/css">
+		@font-face {
+			font-family: 'yishantang';
+			src: url('./fonts/sfont.eot');
+			src: local('yishantang Regular'),
+				local('sfont'),
+				url('./fonts/sfont.woff') format('woff'),
+				url('./fonts/sfont.ttf') format('truetype'),
+				url('./fonts/sfont.svg#sfont') format('svg');
+		}
+
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		.center-in-center {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			-webkit-transform: translate(-50%, -50%);
+			-moz-transform: translate(-50%, -50%);
+			-ms-transform: translate(-50%, -50%);
+			-o-transform: translate(-50%, -50%);
+			transform: translate(-50%, -50%);
+		}
+
+		h1 {
+			font-family: yishantang;
+			color: aliceblue;
+		}
+
+		body {
+			background-color: #009688;
+		}
+	</style>
 </head>
+
 <body>
-	<div>
-		<center>
-			<h2>Hello Hitokoto.</h2>
-			<h3>Welcome to Hitokoto API Project Page.</h3>
+	<div class="center-in-center">
+			<h2 style="color: white;">Hello Hitokoto.</h2>
+			<h3 style="color: white;">Welcome to Hitokoto API Project Page.</h3>
 			<h1 id="viewer"></h1>
-		</center>
+			<button onclick="getHitokoto();" class="button-blue">Hitokoto API</button>
+			<button onclick="getJinrishici();" class="button-blue">Jinrishici API</button>
 	</div>
 
 	<script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
+	<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
 	<script type="text/javascript">
-		var text = getHitokoto();
+		//var text = getHitokoto();
 	</script>
 </body>
+
 </html>
