@@ -4,19 +4,6 @@
 <head>
 	<title>Hello Hitoko.</title>
 	<script type="text/javascript" src="js/main.js"></script>
-	<style>
-		.button-blue {
-			width: 200px;
-			padding: 8px;
-			background-color: #428bca;
-			border-color: #357ebd;
-			color: #fff;
-			text-align: center;
-			vertical-align: middle;
-			border: 1px solid transparent;
-			font-size: 125%
-		}
-	</style>
 	<style type="text/css">
 		@font-face {
 			font-family: 'yishantang';
@@ -44,32 +31,65 @@
 			transform: translate(-50%, -50%);
 		}
 
-		* {
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		p {
 			font-family: yishantang;
-			color: aliceblue;
+			color: #000000;
 		}
 
 		body {
-			background-color: #009688;
+			background-color: #ffffff;
+			font-family: yishantang, Arial, Helvetica, sans-serif;
 		}
 	</style>
+
+	<link href="./lib/mdui/css/mdui.min.css" rel="stylesheet" />
+	<link href="./css/main.css" rel="stylesheet" />
 </head>
 
-<body>
+<body class="mdui-theme-primary-pink wrapper">
+	<!-- 设置主题对话框 -->
+	<ul class="mdui-menu original-font wrapper" id="theme-menu">
+		<li class="mdui-menu-item">
+			<a href="javascript:;" class="mdui-ripple" onclick="changeTheme(getThemeContent('水鸭青'));">
+				<span class="texts">水鸭青</span>
+			</a>
+		</li>
+		<li class="mdui-menu-item" class="mdui-ripple" onclick="changeTheme(getThemeContent('知乎蓝'));">
+			<a href="javascript:;">
+				<span class="texts">知乎蓝</span>
+			</a>
+		</li>
+		<li class="mdui-menu-item">
+			<a href="javascript:;" class="mdui-ripple" onclick="changeTheme(getThemeContent('A屏黑'));">
+				<span class="texts">A屏黑</span>
+			</a>
+		</li>
+		<li class="mdui-divider"></li>
+		<li class="mdui-menu-item">
+			<a href="javascript:;" class="mdui-ripple" onclick="changeTheme(getThemeContent('原生'));">
+				<span class="texts">Original Theme</span>
+			</a>
+		</li>
+	</ul>
+
 	<div class="center-in-center">
-			<h2 style="color: white;">Hello Hitokoto.</h2>
-			<h3 style="color: white;">Welcome to Hitokoto API Project Page.</h3>
-			<h1 id="viewer"></h1>
-			<button onclick="getHitokoto();" class="button-blue">Hitokoto API</button>
-			<button onclick="getJinrishici();" class="button-blue">Jinrishici API</button>
+		<h1 class="texts" id="viewer" onclick="getJinrishici();"></h1>
 	</div>
 
-	<script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
-	<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-	<script type="text/javascript">
-		//var text = getHitokoto();
-	</script>
+	<a class="mdui-btn mdui-ripple mdui-btn-raised mdui-color-theme mdui-fab mdui-fab-fixed" href="javascript:;" mdui-menu="{target: '#theme-menu'}">
+		<i class="mdui-icon material-icons">menu</i>
+	</a>
+
+	<!-- 引用今日诗词SDK -->
+	<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8" onload="getJinrishici();"></script>
+	<script src="./lib/mdui/js/mdui.min.js"></script>
+	<script src="./js/theme.js"></script>
+	<script src="./js/data.js"></script>
 </body>
 
 </html>

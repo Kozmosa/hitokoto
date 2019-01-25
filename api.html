@@ -16,8 +16,8 @@
       return res.json();
     })
     .then(function (data) {
-      var hitokoto = document.getElementById('viewer');
-      viewer.innerText = data.hitokoto;
+      var viewer = document.getElementById('viewer');
+      viewer.innerHTML = "{'data' : '" + data.hitokoto + "'}";
     })
     .catch(function (err) {
       console.error(err);
