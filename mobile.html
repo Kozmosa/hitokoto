@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Hello Hitoko.</title>
+	<script type="text/javascript" src="js/main.js"></script>
+	<style type="text/css">
+		@font-face {
+			font-family: 'yishantang';
+			src: url('./fonts/sfont.eot');
+			src: local('yishantang Regular'),
+				local('sfont'),
+				url('./fonts/sfont.woff') format('woff'),
+				url('./fonts/sfont.ttf') format('truetype'),
+				url('./fonts/sfont.svg#sfont') format('svg');
+		}
+
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		.center-in-center {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			-webkit-transform: translate(-50%, -50%);
+			-moz-transform: translate(-50%, -50%);
+			-ms-transform: translate(-50%, -50%);
+			-o-transform: translate(-50%, -50%);
+			transform: translate(-50%, -50%);
+		}
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		text,
+		p {
+			font-family: yishantang;
+			color: #000000;
+		}
+
+		body {
+			background-color: #ffffff;
+			font-family: yishantang, Arial, Helvetica, sans-serif;
+		}
+	</style>
+
+	<link href="./lib/mdui/css/mdui.min.css" rel="stylesheet" />
+	<link href="./css/main.css" rel="stylesheet" />
+</head>
+
+<body class="mdui-theme-primary-pink wrapper">
+	<!-- 设置主题对话框 -->
+	<ul class="mdui-menu original-font wrapper" id="theme-menu">
+		<li class="mdui-menu-item">
+			<a href="javascript:;" class="mdui-ripple" onclick="displayDetails()">
+				<span class="texts">显示诗词详细信息</span>
+			</a>
+		</li>
+		<li class="mdui-menu-item">
+			<a href="javascript:;" class="mdui-ripple bg-cyan" onclick="changeTheme(getThemeContent('水鸭青'));">
+				<span class="texts">水鸭青</span>
+			</a>
+		</li>
+		<li class="mdui-menu-item" class="mdui-ripple bg-blue" onclick="changeTheme(getThemeContent('知乎蓝'));">
+			<a href="javascript:;">
+				<span class="texts">知乎蓝</span>
+			</a>
+		</li>
+		<li class="mdui-menu-item">
+			<a href="javascript:;" class="mdui-ripple bg-black" onclick="changeTheme(getThemeContent('A屏黑'));">
+				<span class="texts">A屏黑</span>
+			</a>
+		</li>
+		<li class="mdui-divider"></li>
+		<li class="mdui-menu-item">
+			<a href="javascript:;" class="mdui-ripple" onclick="changeTheme(getThemeContent('原生'));">
+				<span class="texts">Original Theme</span>
+			</a>
+		</li>
+	</ul>
+
+	<div class="center-in-center">
+		<div class="mdui-container">
+			<div class="mdui-row">
+				<div class="mdui-col-sm-12">
+					<h1 class="texts-sm" id="viewer" onclick="getJinrishici();"></h1>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<a class="mdui-btn mdui-ripple mdui-btn-raised mdui-color-theme mdui-fab mdui-fab-fixed" href="javascript:;" mdui-menu="{target: '#theme-menu'}">
+		<i class="mdui-icon material-icons">menu</i>
+	</a>
+
+	<!-- 引用今日诗词SDK -->
+	<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8" onload="getJinrishici();"></script>
+	<script src="./lib/mdui/js/mdui.min.js"></script>
+	<script src="./js/theme.js"></script>
+	<script src="./js/data.js"></script>
+</body>
+
+</html>
