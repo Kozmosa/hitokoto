@@ -1,7 +1,8 @@
 # Hitokoto API Test
 
-- Author: [Xuyang1638](https://github.com/xuyang1638)
+- Author: [Kozmosa](https://github.com/Kozmosa)
 - Data Origin: [Hitokoto.cn](https://hitokoto.cn) and [Jinrishici.com](https://jinrishici.com)
+- Demo: [Demo on Github Pages](https://kozmosa.github.io/hitokoto)
 
 ## Techs:
 
